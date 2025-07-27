@@ -1,0 +1,171 @@
+#skill-tree-container {
+    position: relative; /* Needed for absolute positioning of nodes */
+    width: 100vw; /* Full viewport width */
+    height: 100vh; /* Full viewport height */
+    overflow: hidden;
+    touch-action: none;
+
+    /* --- ADD THESE BACKGROUND PROPERTIES --- */
+    background-image: url('images/map.png'); /* Replace with your image path */
+    background-size: '50%'; /* or 'contain', '100% 100%', 'auto' */
+    background-position: top left; /* or 'top left', '50% 50%' */
+    background-repeat: no-repeat; /* Prevents the image from tiling */
+    /* background-attachment: fixed; /* Optional: makes the background scroll with the page, useful if container can scroll */
+    /* --- END BACKGROUND PROPERTIES --- */
+
+    /* Ensure a fallback background color in case the image doesn't load */
+    background-color: #e0e0e0; /* Light gray fallback */
+}
+
+/* --- SPLASH SCREEN CSS --- */
+#splash-screen {
+    position: fixed; /* Fixes it to the viewport, ignoring scrolling */
+    top: 0;
+    left: 0;
+    width: 100vw; /* 100% of viewport width */
+    height: 100vh; /* 100% of viewport height */
+    background-color: #ffffff; /* Or any background color you want */
+    display: flex; /* Use flexbox for easy centering */
+    flex-direction: column; /* Stack image and text vertically */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    z-index: 9999; /* Ensures it's on top of everything else */
+    opacity: 1; /* Initially fully visible */
+    visibility: visible; /* Initially visible */
+    transition: opacity 1s ease-out, visibility 1s ease-out; /* Smooth transition when it fades out */
+}
+
+#splash-screen img {
+    max-width: 80%; /* Make image responsive */
+    max-height: 80%;
+    object-fit: contain; /* Ensures image fits without cropping */
+}
+
+#splash-screen p {
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Class to apply when the splash screen should be hidden */
+#splash-screen.fade-out {
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* --- END SPLASH SCREEN CSS --- */
+
+/* ... rest of your existing CSS for #skill-tree-container, .skill-node, etc. ... */
+/* Highlight for clicked node */
+.skill-node.highlighted {
+    border-color: #007bff; /* Bright blue border */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Glowing effect */
+    background-color: #e0f0ff; /* Slightly lighter background */
+    transform: scale(1.05); /* Slightly enlarge on highlight */
+    transition: all 0.2s ease-out; /* Smooth transition for highlight */
+}
+
+/* Highlight for connections */
+.connection-arrow.highlighted {
+    stroke: #007bff; /* Bright blue stroke */
+    stroke-width: 5; /* Thicker line */
+    /* Optional: Add a subtle animation or dash array to make it stand out */
+    /* stroke-dasharray: 5 5; */
+    /* animation: dash 1s linear infinite; */
+    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out;
+}
+
+/* If you want to animate the dash, add this: */
+/*
+@keyframes dash {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 100; }
+}
+*/
+
+/* --- EXISTING CSS BELOW --- */
+
+#skill-tree-container {
+    position: fixed;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+    touch-action: none;
+
+    background-image: url('images/map.png');
+    background-size: contain;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-color: #e0e0e0;
+}
+
+.skill-node {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    background-color: #d3ff2368;
+    border: 4px solid #210eca;
+    border-radius: 40px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    padding: 2px;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    transition: all 0.2s ease-out; /* Add transition for general node changes too */
+}
+
+.skill-node img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 5px;
+}
+
+.node-title {
+    font-size: 0.7em;
+    text-align: center;
+    color: #333;
+    margin: 0;
+}
+
+#connections-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.connection-arrow {
+    stroke: #666;
+    stroke-width: 3;
+    marker-end: url(#arrowhead);
+    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out; /* Add transition for general arrow changes too */
+}
+
+/* SVG for connections */
+#connections-svg {
+    position: static;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allow clicks to pass through to nodes */
+    z-index: -01; /* Place behind nodes */
+}
+
+/* Style for the SVG lines */
+.connection-arrow {
+    stroke: #3fbe00;
+    stroke-width: 
+    6;
+    marker-end: url(#arrowhead); /* Add an arrowhead marker */
+}
