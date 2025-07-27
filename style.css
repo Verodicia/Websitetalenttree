@@ -23,7 +23,7 @@
     justify-content: center; /* Center content vertically */
     align-items: center; /* Center content horizontally */
     z-index: 9999; /* Ensures it's on top of everything else */
-    opacity: 1; /* Initially fully visible */
+    opacity: 1000; /* Initially fully visible */
     visibility: visible; /* Initially visible */
     transition: opacity 1s ease-out, visibility 1s ease-out; /* Smooth transition when it fades out */
 }

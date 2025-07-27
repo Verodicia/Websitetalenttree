@@ -133,24 +133,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawConnections() {
         svg.innerHTML = '<defs></defs>';
+        const containerRect = container.getBoundingClientRect();
+
         nodes.forEach(node => {
             const sourceElement = document.getElementById(node.id);
-            if (!sourceElement) return;
+            if (!sourceElement || sourceElement.style.display === 'none') return;
             const sourceRect = sourceElement.getBoundingClientRect();
-            const sourceX = sourceRect.left + sourceRect.width / 2;
-            const sourceY = sourceRect.top + sourceRect.height / 2;
+            const sourceX = sourceRect.left - containerRect.left + sourceRect.width / 2;
+            const sourceY = sourceRect.top - containerRect.top + sourceRect.height / 2;
+
             node.connections.forEach(targetId => {
                 const targetElement = document.getElementById(targetId);
-                if (!targetElement) return;
+                if (!targetElement || targetElement.style.display === 'none') return;
                 const targetRect = targetElement.getBoundingClientRect();
-                const targetX = targetRect.left + targetRect.width / 2;
-                const targetY = targetRect.top + targetRect.height / 2;
+                const targetX = targetRect.left - containerRect.left + targetRect.width / 2;
+                const targetY = targetRect.top - containerRect.top + targetRect.height / 2;
+
                 const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
                 line.setAttribute('x1', sourceX);
                 line.setAttribute('y1', sourceY);
                 line.setAttribute('x2', targetX);
                 line.setAttribute('y2', targetY);
-                // Highlight if source node is highlighted
                 line.setAttribute('class', highlightedNodes.has(node.id) ? 'connection-arrow highlighted' : 'connection-arrow');
                 svg.appendChild(line);
             });
@@ -193,18 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
     nodes.forEach(nodeData => {
         const nodeElement = document.getElementById(nodeData.id);
         if (nodeElement) {
-            // Ensure every node has a counter span
-            let counterElem = nodeElement.querySelector('.node-counter');
-            if (!counterElem) {
-                counterElem = document.createElement('span');
-                counterElem.className = 'node-counter';
-                counterElem.style.display = 'none';
-                counterElem.textContent = '0';
-                nodeElement.appendChild(counterElem);
-            }
+            const counterElem = document.createElement('span');
+            counterElem.classList.add('node-counter');
+            counterElem.style.display = 'none';
+            nodeElement.appendChild(counterElem);
+
             nodeElement.addEventListener('click', handleNodeClick);
         }
     });
 
-    window.addEventListener('resize', setInitialNodePositions);
+    window.addEventListener('scroll', drawConnections);
 });
