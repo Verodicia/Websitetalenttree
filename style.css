@@ -5,13 +5,6 @@
     overflow: hidden;
     touch-action: none;
 
-    /* --- ADD THESE BACKGROUND PROPERTIES --- */
-    background-image: url('images/map.png'); /* Replace with your image path */
-    background-size: '50%'; /* or 'contain', '100% 100%', 'auto' */
-    background-position: top left; /* or 'top left', '50% 50%' */
-    background-repeat: no-repeat; /* Prevents the image from tiling */
-    /* background-attachment: fixed; /* Optional: makes the background scroll with the page, useful if container can scroll */
-    /* --- END BACKGROUND PROPERTIES --- */
 
     /* Ensure a fallback background color in case the image doesn't load */
     background-color: #e0e0e0; /* Light gray fallback */
@@ -93,24 +86,25 @@
     touch-action: none;
     border: #333 solid 1px;
     background-image: url('images/map.png');
-    background-size: fixed;
+    background-size: '10%'; /* Use 'cover' to ensure the background image covers the entire container */
     background-position: left top;
     background-repeat: no-repeat;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
 }
 .node-counter {
     position: absolute;
-    top: 6px;      /* Adjust for vertical centering */
-    right: 6px;    /* Adjust for horizontal centering */
+    top: 60px;      /* Adjust for vertical centering */
+    right: -4px;    /* Adjust for horizontal centering */
     width: 22px;
     height: 22px;
     background: #007bff;
-    color: #fff;
+    color: #00ff2a;
     border-radius: 50%;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bold;
     display: flex;
     align-items: center;
+    font: 1.2em arial, sans-serif;
     justify-content: center;
     z-index: 10;
     box-shadow: 0 0 4px #333;
