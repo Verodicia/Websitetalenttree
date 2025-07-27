@@ -56,7 +56,6 @@
 
 /* --- END SPLASH SCREEN CSS --- */
 
-/* ... rest of your existing CSS for #skill-tree-container, .skill-node, etc. ... */
 /* Highlight for clicked node */
 .skill-node.highlighted {
     border-color: #007bff; /* Bright blue border */
@@ -74,6 +73,7 @@
     /* stroke-dasharray: 5 5; */
     /* animation: dash 1s linear infinite; */
     transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out;
+    stroke-opacity: 1; /* Fully opaque when highlighted */
 }
 
 /* If you want to animate the dash, add this: */
@@ -87,19 +87,37 @@
 /* --- EXISTING CSS BELOW --- */
 
 #skill-tree-container {
-    position: fixed;
-    width: 100vw;
-    height: 80vh;
-    overflow: hidden;
+    position: relative;
+    width: 900px;
+    height: 950px;
     touch-action: none;
-
+    border: #333 solid 1px;
     background-image: url('images/map.png');
-    background-size: contain;
+    background-size: fixed;
     background-position: left top;
     background-repeat: no-repeat;
     background-color: #e0e0e0;
 }
-
+.node-counter {
+    position: absolute;
+    top: 6px;      /* Adjust for vertical centering */
+    right: 6px;    /* Adjust for horizontal centering */
+    width: 22px;
+    height: 22px;
+    background: #007bff;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 1em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 0 4px #333;
+    pointer-events: none;
+    text-align: center;
+    line-height: 22px; /* Ensures vertical centering for single digits */
+}
 .skill-node {
     position: absolute;
     display: flex;
@@ -108,10 +126,10 @@
     justify-content: center;
     width: 80px;
     height: 80px;
-    background-color: #d3ff2368;
-    border: 4px solid #210eca;
-    border-radius: 40px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    background-color: #ffffff;
+    border: 4px solid #fff700;
+    border-radius: 30px;
+    box-shadow: 2px 2px 5px rgb(255, 200, 0);
     padding: 2px;
     box-sizing: border-box;
     user-select: none;
@@ -119,39 +137,21 @@
     -moz-user-select: none;
     -ms-user-select: none;
     transition: all 0.2s ease-out; /* Add transition for general node changes too */
+    overflow: visible; /* Ensure counter is visible */
+    z-index: 5; /* Lower than .node-counter */
 }
-
 .skill-node img {
     width: 40px;
     height: 40px;
-    margin-bottom: 5px;
+    margin-bottom: 0px;
 }
-
 .node-title {
+    font: 1em tahoma, sans-serif;
     font-size: 0.7em;
     text-align: center;
-    color: #333;
+    color: #ff0000;
     margin: 0;
 }
-
-#connections-svg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
-}
-
-.connection-arrow {
-    stroke: #666;
-    stroke-width: 3;
-    marker-end: url(#arrowhead);
-    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out; /* Add transition for general arrow changes too */
-}
-
-/* SVG for connections */
 #connections-svg {
     position: static;
     top: 0;
@@ -161,11 +161,10 @@
     pointer-events: none; /* Allow clicks to pass through to nodes */
     z-index: -01; /* Place behind nodes */
 }
-
 /* Style for the SVG lines */
 .connection-arrow {
-    stroke: #3fbe00;
-    stroke-width: 
-    6;
+    stroke: #ff000000;
+    stroke-width: 6;
+    stroke-opacity: 20%;
     marker-end: url(#arrowhead); /* Add an arrowhead marker */
 }
