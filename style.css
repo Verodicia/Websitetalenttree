@@ -162,3 +162,11 @@
     stroke-opacity: 20%;
     marker-end: url(#arrowhead); /* Add an arrowhead marker */
 }
+.skill-node.pop {
+    animation: popNode 0.3s;
+}
+@keyframes popNode {
+    0%   { transform: scale(1); }
+    50%  { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}

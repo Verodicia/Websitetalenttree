@@ -178,7 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 counterElem.textContent = nodeClickCounts[nodeId];
             }
         }
-        // All nodes can be highlighted and use counters, no restrictions
+
+        // Add pop animation
+        clickedNode.classList.add('pop');
+        setTimeout(() => {
+            clickedNode.classList.remove('pop');
+        }, 300);
     }
 
     // Initial setup
