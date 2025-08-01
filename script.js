@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('skill-tree-container');
     const svg = document.getElementById('connections-svg');
 
-
     // Store node positions and connections (can be loaded from JSON later)
     const nodes = [
         { id: 'node1', x: 24, y: 0, connections: ['node3', 'node4', 'node5'] },
@@ -76,7 +75,6 @@ document.addEventListener('DOMContentLoaded', () => {
         // ... more nodes
     ];
 
-
     // Track highlighted nodes
     const highlightedNodes = new Set();
 
@@ -94,6 +92,24 @@ document.addEventListener('DOMContentLoaded', () => {
         nodes.forEach(nodeData => {
             let nodeElement = document.getElementById(nodeData.id);
             if (!nodeElement) return;
+
+            // Node 1 and 2 are always visible
+            let isVisible = (nodeData.id === 'node1' || nodeData.id === 'node2');
+
+            // Otherwise, show if highlighted or connected to a highlighted node
+            if (!isVisible) {
+                if (highlightedNodes.has(nodeData.id)) {
+                    isVisible = true;
+                } else {
+                    nodes.forEach(n => {
+                        if (highlightedNodes.has(n.id) && n.connections.includes(nodeData.id)) {
+                            isVisible = true;
+                        }
+                    });
+                }
+            }
+
+            nodeElement.style.display = isVisible ? 'flex' : 'none';
 
             // x and y are now percentages (0-100)
             let newX = (nodeData.x / 100) * (containerRect.width - nodeWidth);
@@ -176,6 +192,17 @@ document.addEventListener('DOMContentLoaded', () => {
             nodeElement.appendChild(counterElem);
 
             nodeElement.addEventListener('click', handleNodeClick);
+        }
+    });
+
+    // Set title attributes for nodes based on their title element
+    nodes.forEach(nodeData => {
+        const nodeElement = document.getElementById(nodeData.id);
+        if (nodeElement) {
+            const titleElem = nodeElement.querySelector('.node-title');
+            if (titleElem && titleElem.textContent.trim()) {
+                nodeElement.title = titleElem.textContent.trim();
+            }
         }
     });
 
