@@ -1,14 +1,3 @@
-#skill-tree-container {
-    position: relative; /* Needed for absolute positioning of nodes */
-    width: 100vw; /* Full viewport width */
-    height: 100vh; /* Full viewport height */
-    overflow: hidden;
-    touch-action: none;
-
-
-    /* Ensure a fallback background color in case the image doesn't load */
-    background-color: #e0e0e0; /* Light gray fallback */
-}
 
 /* --- SPLASH SCREEN CSS --- */
 #splash-screen {
@@ -81,36 +70,42 @@
 
 #skill-tree-container {
     position: relative;
-    width: 900px;
-    height: 950px;
-    touch-action: none;
+    width: 90vw;      /* or 100vw for full width */
+    max-width: 1200x; /* optional max width */
+    aspect-ratio: 1/1; /* keeps it square */
+    height: auto;
+    margin: 0 auto;
     border: #333 solid 1px;
     background-image: url('images/map.png');
-    background-size: '10%'; /* Use 'cover' to ensure the background image covers the entire container */
-    background-position: left top;
+    background-size: cover;
+    background-position: center;
     background-repeat: no-repeat;
     background-color: #ffffff;
+    overflow: hidden;
+    touch-action: none;
+    border: #333 solid 1px;
 }
 .node-counter {
     position: absolute;
-    top: 60px;      /* Adjust for vertical centering */
-    right: -4px;    /* Adjust for horizontal centering */
-    width: 22px;
-    height: 22px;
+    top: 8%;
+    right: 8%;
+    width: 32%;
+    height: 32%;
     background: #007bff;
     color: #00ff2a;
     border-radius: 50%;
-    font-size: 1.5em;
+    font-size: 1.1em; /* Scales with node size */
     font-weight: bold;
     display: flex;
     align-items: center;
-    font: 1.2em arial, sans-serif;
+    font-family: arial, sans-serif;
     justify-content: center;
     z-index: 10;
     box-shadow: 0 0 4px #333;
     pointer-events: none;
     text-align: center;
-    line-height: 22px; /* Ensures vertical centering for single digits */
+    line-height: 1;
+    transition: font-size 0.2s, width 0.2s, height 0.2s;
 }
 .skill-node {
     position: absolute;
@@ -118,33 +113,40 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 80px;
-    height: 80px;
+    width: 8vw;         /* Responsive width */
+    height: 8vw;        /* Responsive height */
+    min-width: 30px;
+    min-height: 30px;
+    max-width: 120px;
+    max-height: 120px;
     background-color: #ffffff;
-    border: 4px solid #fff700;
-    border-radius: 30px;
+    border: 2px solid #fff700;
+    border-radius: 50%;
     box-shadow: 2px 2px 5px rgb(255, 200, 0);
     padding: 2px;
     box-sizing: border-box;
     user-select: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    transition: all 0.2s ease-out; /* Add transition for general node changes too */
-    overflow: visible; /* Ensure counter is visible */
-    z-index: 5; /* Lower than .node-counter */
+    transition: all 0.2s ease-out;
+    overflow: visible;
+    z-index: 5;
 }
 .skill-node img {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 0px;
+    width: 70%;
+    height: auto;
+    max-width: 90%;
+    max-height: 90%;
+    margin-bottom: 0;
+    display: block;
 }
+/* Hide the node title text for a picture-only look */
 .node-title {
-    font: 1em tahoma, sans-serif;
-    font-size: 0.7em;
+    /* font-size: 0.9em;
     text-align: center;
     color: #ff0000;
     margin: 0;
+    word-break: break-word;
+    line-height: 1.1; */
+    display: none;
 }
 #connections-svg {
     position: static;
