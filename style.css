@@ -1,11 +1,30 @@
-#skill-tree-header {
-    text-align: center;
-    margin-top: 20px;
-    font-family: monospace, sans-serif;
+
+/* --- FONT STYLES --- */
+/* Courier Prime Font Styles */
+.courier-prime-regular {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: normal;
 }
 
-/*-- Xanh Mono Font Styles --- */
+.courier-prime-bold {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
 
+.courier-prime-regular-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.courier-prime-bold-italic {
+  font-family: "Courier Prime", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+/* Xanh Mono Font Styles */
 #xanh-mono-regular {
   font-family: "Xanh Mono", monospace;
   font-weight: 400;
@@ -17,7 +36,6 @@
   font-weight: 400;
   font-style: italic;
 }
-
 
 /* --- SPLASH SCREEN CSS --- */
 #splash-screen {
@@ -47,54 +65,34 @@
     margin-top: 20px;
     font-family: monospace, Arial; /* Use the Xanh Mono font */
     font-size: 1.2em;
-    color: #ffffff;
+    color: #000000;
 }
 
-/* Class to apply when the splash screen should be hidden */
 #splash-screen.fade-out {
     opacity: 0;
     visibility: hidden;
+}
+/* --- END SPLASH SCREEN CSS --- */
+
+#skill-tree-header {
+    text-align: center;
+    margin-top: 20px;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 body {
     background: linear-gradient(135deg, #222 0%, #444 100%);
     color: #eee;
-    font-family: monospace, Arial;
+    font-family: 'Courier New', Courier, monospace;
     margin: 0;
     min-height: 100vh;
-        }
-/* --- END SPLASH SCREEN CSS --- */
-
-/* Highlight for clicked node */
-.skill-node.highlighted {
-    border-color: #007bff; /* Bright blue border */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Glowing effect */
-    background-color: #e0f0ff; /* Slightly lighter background */
-    transform: scale(1.05); /* Slightly enlarge on highlight */
-    transition: all 0.2s ease-out; /* Smooth transition for highlight */
 }
 
-/* Highlight for connections */
-.connection-arrow.highlighted {
-    stroke: #007bff; /* Bright blue stroke */
-    stroke-width: 5; /* Thicker line */
-    /* Optional: Add a subtle animation or dash array to make it stand out */
-    /* stroke-dasharray: 5 5; */
-    /* animation: dash 1s linear infinite; */
-    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out;
-    stroke-opacity: 1; /* Fully opaque when highlighted */
-}
 
-/* If you want to animate the dash, add this: */
-/*
-@keyframes dash {
-    from { stroke-dashoffset: 0; }
-    to { stroke-dashoffset: 100; }
-}
-*/
-
-/* --- EXISTING CSS BELOW --- */
-
+/* Skill tree container */
+/* This container holds the skill tree and its nodes */
+/* It is responsive and maintains a square aspect ratio */
+/* The background image is set to cover the entire container */
 #skill-tree-container {
     position: relative;
     width: 90vw;      /* or 100vw for full width */
@@ -125,7 +123,7 @@ body {
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-family: monospace, Arial; /* Use the Xanh Mono font */
+    font-family: 'Courier New', Courier, monospace; /* Use the Xanh Mono font */
     justify-content: center;
     z-index: 10;
     box-shadow: 0 0 4px #333;
@@ -194,15 +192,43 @@ body {
 .skill-node.pop {
     animation: popNode 0.3s;
 }
+/* Highlight for clicked node */
+.skill-node.highlighted {
+    border-color: #007bff; /* Bright blue border */
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Glowing effect */
+    background-color: #e0f0ff; /* Slightly lighter background */
+    transform: scale(1.05); /* Slightly enlarge on highlight */
+    transition: all 0.2s ease-out; /* Smooth transition for highlight */
+}
 @keyframes popNode {
     0%   { transform: scale(1); }
     50%  { transform: scale(1.2); }
     100% { transform: scale(1); }
 }
+/* Highlight for connections */
+.connection-arrow.highlighted {
+    stroke: #007bff; /* Bright blue stroke */
+    stroke-width: 5; /* Thicker line */
+    /* Optional: Add a subtle animation or dash array to make it stand out */
+    /* stroke-dasharray: 5 5; */
+    /* animation: dash 1s linear infinite; */
+    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out;
+    stroke-opacity: 1; /* Fully opaque when highlighted */
+}
 
+/* If you want to animate the dash, add this: */
+/*
+@keyframes dash {
+    from { stroke-dashoffset: 0; }
+    to { stroke-dashoffset: 100; }
+}
+*/
+/* --- END SKILL TREE CSS --- */
+
+/* Footer styles */
+/* This section styles the footer of the page */
 #site-footer {
     width: 100vw;
-    min-width: 320px;
     background: linear-gradient(90deg, #222 0%, #444 100%);
     color: #eee;
     text-align: center;
@@ -211,7 +237,7 @@ body {
     font-size: 1em;
     border-top: 2px solid #c2d001;
     box-shadow: 0 -2px 12px #222;
-    position: relative;
+    position: relative; 
     left: 0;
     bottom: 0;
 }
@@ -223,11 +249,10 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 18px;
-    width: 100%;
 }
 
 .footer-links a {
-    color: #aaa;
+    color: #c0c0c0;
     margin: 0 8px;
     text-decoration: none;
     font-weight: bold;
@@ -235,6 +260,11 @@ body {
     display: inline-flex;
     align-items: center;
     transition: color 0.2s, transform 0.2s;
+}
+
+.footer-links a:hover {
+    color: #c2d001;
+    transform: scale(1.08);
 }
 
 .footer-links img {
@@ -246,11 +276,6 @@ body {
     transition: filter 0.2s;
 }
 
-.footer-links a:hover {
-    color: #c2d001;
-    transform: scale(1.08);
-}
-
 .footer-links a:hover img {
     filter: drop-shadow(0 0 6px #fff700);
 }
@@ -260,4 +285,9 @@ body {
     color: #aaa;
     margin-top: 8px;
     letter-spacing: 0.5px;
+}
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
 }
