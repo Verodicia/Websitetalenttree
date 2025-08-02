@@ -26,7 +26,7 @@
     left: 0;
     width: 100vw; /* 100% of viewport width */
     height: 100vh; /* 100% of viewport height */
-    background-color: #ffffff; /* Or any background color you want */
+    background: linear-gradient(135deg, #222 0%, #444 100%); /* Or any background color you want */
     display: flex; /* Use flexbox for easy centering */
     flex-direction: column; /* Stack image and text vertically */
     justify-content: center; /* Center content vertically */
@@ -47,7 +47,7 @@
     margin-top: 20px;
     font-family: monospace, Arial; /* Use the Xanh Mono font */
     font-size: 1.2em;
-    color: #333;
+    color: #ffffff;
 }
 
 /* Class to apply when the splash screen should be hidden */
@@ -208,7 +208,7 @@ body {
     padding: 28px 0 16px 0;
     margin-top: 40px;
     font-size: 1em;
-    border-top: 2px solid #fff700;
+    border-top: 2px solid #c2d001;
     box-shadow: 0 -2px 12px #222;
 }
 
@@ -222,7 +222,7 @@ body {
 }
 
 .footer-links a {
-    color: #c0c0c0;
+    color: #aaa;
     margin: 0 8px;
     text-decoration: none;
     font-weight: bold;
@@ -233,7 +233,7 @@ body {
 }
 
 .footer-links a:hover {
-    color: #fff700;
+    color: #c2d001;
     transform: scale(1.08);
 }
 
