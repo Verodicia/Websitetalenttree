@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio - Clark Galloway</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #222 0%, #444 100%);
+            color: #eee;
+            font-family: 'Xanh Mono', monospace;
+            margin: 0;
+            min-height: 100vh;
+        }
+        .portfolio-card {
+            background: rgba(30,30,30,0.96);
+            max-width: 700px;
+            width: 96vw;
+            margin: 60px auto 0 auto;
+            padding: 6vw 4vw;
+            border-radius: 18px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+            box-sizing: border-box;
+        }
+        .portfolio-title {
+            font-size: 2em;
+            font-weight: 700;
+            color: #fff700;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+        .portfolio-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .portfolio-item {
+            background: #444;
+            border-radius: 10px;
+            margin-bottom: 18px;
+            padding: 18px 16px;
+            box-shadow: 0 2px 8px #222;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .portfolio-item-title {
+            font-size: 1.2em;
+            color: #00bfff;
+            font-weight: bold;
+        }
+        .portfolio-item-desc {
+            font-size: 1em;
+            color: #eee;
+        }
+        .portfolio-item-link {
+            color: #fff700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+        .portfolio-item-link:hover {
+            color: #00bfff;
+        }
+        @media (max-width: 600px) {
+            .portfolio-card {
+                max-width: 99vw;
+                padding: 8vw 2vw;
+                margin: 24px auto 0 auto;
+                border-radius: 12px;
+            }
+            .portfolio-title {
+                font-size: 1.3em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="portfolio-card">
+        <div class="portfolio-title">My Web Projects</div>
+        <ul class="portfolio-list">
+            <li class="portfolio-item">
+                <div class="portfolio-item-title">Skill Tree Website</div>
+                <div class="portfolio-item-desc">A gamified skill tracker and portfolio, built with vanilla JS and SVG connections.</div>
+                <a href="talent.html" class="portfolio-item-link">View Project</a>
+            </li>
+            <li class="portfolio-item">
+                <div class="portfolio-item-title">Dental Nurse Portal</div>
+                <div class="portfolio-item-desc">A secure portal for dental nurses to manage schedules and training.</div>
+                <a href="#" class="portfolio-item-link">Demo Coming Soon</a>
+            </li>
+            <li class="portfolio-item">
+                <div class="portfolio-item-title">Fitness Progress Tracker</div>
+                <div class="portfolio-item-desc">Track your running, lifting, and progress visually. Responsive and mobile-friendly.</div>
+                <a href="#" class="portfolio-item-link">Demo Coming Soon</a>
+            </li>
+            <!-- Add more projects here -->
+        </ul>
+    </div>
+    <footer id="site-footer">
+        <div class="footer-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="https://www.instagram.com/clark19669/" target="_blank" rel="noopener"><img src="images/instagramlink.png" alt=" instagram"></a>
+            <a href="https://github.com/Verodicia" target="_blank" rel="noopener"><img src="images/githublink.png" alt="github"></a>
+            <a href="https://www.facebook.com/clark.galloway1" target="_blank" rel="noopener"><img src="images/facebooklink.png" alt="facebook"></a>
+        </div>
+        <p class="footer-copyright">&copy; 2025 Clark Galloway</p>
+    </footer>
+</body>
+</html>

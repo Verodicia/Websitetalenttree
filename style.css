@@ -1,42 +1,3 @@
-
-/* --- FONT STYLES --- */
-/* Courier Prime Font Styles */
-.courier-prime-regular {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.courier-prime-bold {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: normal;
-}
-
-.courier-prime-regular-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
-.courier-prime-bold-italic {
-  font-family: "Courier Prime", monospace;
-  font-weight: 700;
-  font-style: italic;
-}
-/* Xanh Mono Font Styles */
-#xanh-mono-regular {
-  font-family: "Xanh Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-#xanh-mono-regular-italic {
-  font-family: "Xanh Mono", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
-
 /* --- SPLASH SCREEN CSS --- */
 #splash-screen {
     position: fixed; /* Fixes it to the viewport, ignoring scrolling */
@@ -74,6 +35,10 @@
 }
 /* --- END SPLASH SCREEN CSS --- */
 
+html, body {
+    height: 100%;
+    min-height: 100vh;
+}
 #skill-tree-header {
     text-align: center;
     margin-top: 20px;
@@ -277,7 +242,7 @@ body {
 }
 
 .footer-links a:hover img {
-    filter: drop-shadow(0 0 6px #fff700);
+    filter: drop-shadow(0 0 6px #c2d001);
 }
 
 .footer-copyright {
@@ -286,8 +251,41 @@ body {
     margin-top: 8px;
     letter-spacing: 0.5px;
 }
+/* --- END FOOTER STYLES --- */
 
-html, body {
-    height: 100%;
-    min-height: 100vh;
+/* Contact and About Card Styles */
+/* These styles apply to the contact and about cards on the page */
+        .contact-card,
+.about-card {
+    background: rgba(30,30,30,0.95);
+    max-width: 420px;
+    width: 92vw;           /* Responsive width for mobile */
+    margin: 60px auto 0 auto;
+    padding: 8vw 4vw;      /* Responsive padding */
+    border-radius: 18px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    .contact-card,
+    .about-card {
+        max-width: 98vw;
+        padding: 10vw 3vw;
+        margin: 24px auto 0 auto;
+        border-radius: 12px;
+    }
+    .about-avatar {
+        width: 80px;
+        height: 80px;
+    }
+    .contact-title,
+    .about-title {
+        font-size: 1.3em;
+    }
+    .contact-desc,
+    .about-desc {
+        font-size: 1em;
+    }
 }
