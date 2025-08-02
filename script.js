@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
         splashScreen.addEventListener('transitionend', () => {
             splashScreen.remove();
         }, { once: true });
-    }, 1000);
+    }, 1001); // Adjust the timeout as needed
 });
 document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('skill-tree-container');
