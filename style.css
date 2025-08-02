@@ -56,6 +56,13 @@
     visibility: hidden;
 }
 
+body {
+    background: linear-gradient(135deg, #222 0%, #444 100%);
+    color: #eee;
+    font-family: monospace, Arial;
+    margin: 0;
+    min-height: 100vh;
+        }
 /* --- END SPLASH SCREEN CSS --- */
 
 /* Highlight for clicked node */
@@ -100,7 +107,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #ffffff;
+    background-color: #000000;
     overflow: hidden;
     touch-action: none;
     border: #333 solid 1px;
@@ -195,24 +202,57 @@
 
 #site-footer {
     width: 100%;
-    background: #d2d2c6;
-    color: #000000;
+    background: linear-gradient(90deg, #222 0%, #444 100%);
+    color: #eee;
     text-align: center;
-    padding: 24px 0 12px 0;
+    padding: 28px 0 16px 0;
     margin-top: 40px;
-    font-size: 1.5em;
+    font-size: 1em;
+    border-top: 2px solid #fff700;
+    box-shadow: 0 -2px 12px #222;
 }
+
 .footer-links {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 18px;
 }
+
 .footer-links a {
-    color: #000000;
-    margin: 0 12px;
-    font-family: monospace, Arial; /* Use the Xanh Mono font */
+    color: #c0c0c0;
+    margin: 0 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: color 0.2s;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    transition: color 0.2s, transform 0.2s;
 }
+
 .footer-links a:hover {
-    color: #ff8000;
+    color: #fff700;
+    transform: scale(1.08);
+}
+
+.footer-links img {
+    width: 28px;
+    height: 28px;
+    margin-left: 6px;
+    vertical-align: middle;
+    filter: drop-shadow(0 0 2px #222);
+    transition: filter 0.2s;
+}
+
+.footer-links a:hover img {
+    filter: drop-shadow(0 0 6px #fff700);
+}
+
+.footer-copyright {
+    font-size: 0.95em;
+    color: #aaa;
+    margin-top: 8px;
+    letter-spacing: 0.5px;
 }
