@@ -5,6 +5,7 @@
     <title>Portfolio - Clark Galloway</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
     <style>
         body {
             background: linear-gradient(135deg, #222 0%, #444 100%);
@@ -74,9 +75,30 @@
                 font-size: 1.3em;
             }
         }
+        #fade-overlay {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #222;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.7s;
+        }
+
+        body.fade-out #fade-overlay {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        body.fade-in #fade-overlay {
+            opacity: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
+    <div id="fade-overlay"></div>
     <div class="portfolio-card">
         <div class="portfolio-title">My Web Projects</div>
         <ul class="portfolio-list">

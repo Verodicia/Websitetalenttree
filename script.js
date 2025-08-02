@@ -9,6 +9,29 @@ window.addEventListener('load', () => {
     }, 1001); // Adjust the timeout as needed
 });
 document.addEventListener('DOMContentLoaded', () => {
+    // Fade in on page load
+    document.body.classList.add('fade-in');
+    setTimeout(() => {
+        document.body.classList.remove('fade-in');
+    }, 700);
+
+    // Fade out on link click
+    document.querySelectorAll('a').forEach(link => {
+        if (
+            link.target !== "_blank" &&
+            link.href &&
+            link.hostname === window.location.hostname
+        ) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location = link.href;
+                }, 700);
+            });
+        }
+    });
+
     const container = document.getElementById('skill-tree-container');
     const svg = document.getElementById('connections-svg');
 
