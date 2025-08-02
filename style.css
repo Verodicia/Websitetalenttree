@@ -201,7 +201,8 @@ body {
 }
 
 #site-footer {
-    width: 100%;
+    width: 100vw;
+    min-width: 320px;
     background: linear-gradient(90deg, #222 0%, #444 100%);
     color: #eee;
     text-align: center;
@@ -210,6 +211,9 @@ body {
     font-size: 1em;
     border-top: 2px solid #c2d001;
     box-shadow: 0 -2px 12px #222;
+    position: relative;
+    left: 0;
+    bottom: 0;
 }
 
 .footer-links {
@@ -219,6 +223,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     gap: 18px;
+    width: 100%;
 }
 
 .footer-links a {
@@ -232,11 +237,6 @@ body {
     transition: color 0.2s, transform 0.2s;
 }
 
-.footer-links a:hover {
-    color: #c2d001;
-    transform: scale(1.08);
-}
-
 .footer-links img {
     width: 28px;
     height: 28px;
@@ -244,6 +244,11 @@ body {
     vertical-align: middle;
     filter: drop-shadow(0 0 2px #222);
     transition: filter 0.2s;
+}
+
+.footer-links a:hover {
+    color: #c2d001;
+    transform: scale(1.08);
 }
 
 .footer-links a:hover img {
