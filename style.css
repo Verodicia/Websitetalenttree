@@ -1,9 +1,23 @@
-
 #skill-tree-header {
     text-align: center;
     margin-top: 20px;
-    font-family: Arial, sans-serif;
+    font-family: monospace, sans-serif;
 }
+
+/*-- Xanh Mono Font Styles --- */
+
+#xanh-mono-regular {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#xanh-mono-regular-italic {
+  font-family: "Xanh Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
 
 /* --- SPLASH SCREEN CSS --- */
 #splash-screen {
@@ -31,7 +45,7 @@
 
 #splash-screen p {
     margin-top: 20px;
-    font-family: sans-serif;
+    font-family: monospace, Arial; /* Use the Xanh Mono font */
     font-size: 1.2em;
     color: #333;
 }
@@ -104,7 +118,7 @@
     font-weight: bold;
     display: flex;
     align-items: center;
-    font-family: arial, sans-serif;
+    font-family: monospace, Arial; /* Use the Xanh Mono font */
     justify-content: center;
     z-index: 10;
     box-shadow: 0 0 4px #333;
@@ -177,4 +191,28 @@
     0%   { transform: scale(1); }
     50%  { transform: scale(1.2); }
     100% { transform: scale(1); }
+}
+
+#site-footer {
+    width: 100%;
+    background: #d2d2c6;
+    color: #000000;
+    text-align: center;
+    padding: 24px 0 12px 0;
+    margin-top: 40px;
+    font-size: 1.5em;
+}
+.footer-links {
+    margin-bottom: 8px;
+}
+.footer-links a {
+    color: #000000;
+    margin: 0 12px;
+    font-family: monospace, Arial; /* Use the Xanh Mono font */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+.footer-links a:hover {
+    color: #ff8000;
 }
