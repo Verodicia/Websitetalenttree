@@ -254,19 +254,7 @@ body {
 /* --- END FOOTER STYLES --- */
 
 /* Contact and About Card Styles */
-/* These styles apply to the contact and about cards on the page */
-        .contact-card,
-.about-card {
-    background: rgba(30,30,30,0.95);
-    max-width: 420px;
-    width: 92vw;           /* Responsive width for mobile */
-    margin: 60px auto 0 auto;
-    padding: 8vw 4vw;      /* Responsive padding */
-    border-radius: 18px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.4);
-    text-align: center;
-    box-sizing: border-box;
-}
+
 
 @media (max-width: 600px) {
     .contact-card,
