@@ -10,6 +10,7 @@ body {
     display: flex;
     flex-direction: column;
     background: linear-gradient(135deg, #1b1b1b 0%, #4f4f4f 100%);
+    background-attachment: fixed;
     color: #eee;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
