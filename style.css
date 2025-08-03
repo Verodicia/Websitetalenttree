@@ -71,17 +71,13 @@ body {
     max-width: 700px;/* optional max width */
     min-width: 350px; /* minimum width for smaller screens */
     aspect-ratio: 1/1; /* keeps it square */
-    height: auto;
     margin: 0 auto;
     border: #333 solid 2px;
     background-image: url('images/map.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     background-color: #000000;
-    overflow: hidden;
-    touch-action: none;
-    border: #333 solid 1px;
+    border: #fff700 solid 2px;
 }
 .node-counter {
     position: absolute;
@@ -121,12 +117,6 @@ body {
     border: 2px solid #fff700;
     border-radius: 50%;
     box-shadow: 2px 2px 5px rgb(255, 200, 0);
-    padding: 2px;
-    box-sizing: border-box;
-    user-select: none;
-    transition: all 0.2s ease-out;
-    overflow: visible;
-    z-index: 5;
 }
 .skill-node img {
     width: 70%;
@@ -201,7 +191,7 @@ body {
 
 
 /* Main content grows to fill space, footer stays at bottom */
-.contact-card, .about-card, .portfolio-card, .homepage-card, .skilltree-container {
+.contact-card, .about-card, .portfolio-card, .homepage-card, .skill-tree-container {
     flex: 1 0 auto;
  }
 /* Footer styles */
