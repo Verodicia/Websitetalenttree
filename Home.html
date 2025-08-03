@@ -24,18 +24,12 @@
             box-sizing: border-box;
         }
         .homepage-title {
-            font-size: 2.2em;
+            font-size: 1.6em;
             font-weight: 700;
             letter-spacing: 1px;
-            text-shadow: #222222 4px 4px 4px;
-            margin-bottom: 8px;
+            text-shadow: #222222 8px 8px 8px;
+            margin-bottom: 20px;
             color: #c2d001;
-        }
-        .homepage-subtitle {
-            font-size: 1.1em;
-            color: #00f2ff;
-            text-shadow: #222 4px 4px 4px;
-            margin-bottom: 18px;
         }
         .homepage-desc {
             font-size: 1.05em;
@@ -60,6 +54,88 @@
             background: #00bfff;
             color: #fff;
         }
+/* Spinning Text */
+        .Iam {
+        padding: 2em 0em;
+        font: normal 40px/50px courier, monospace;
+        color: #999;
+        }
+        .Iam p {
+        height: 25px;
+        float: left;
+        margin-right: 0em;
+        }
+        .Iam b {
+        float: left;
+        overflow: hidden;
+        position: left;
+        height: 50px;
+        top: 0px;
+        }
+        .Iam .innerIam {
+        display: inline-block;
+        color: #c2d001;
+        position: relative;
+        white-space: nowrap;
+        top: 0;
+        left: 0;
+
+        /*animation*/
+        -webkit-animation:move 5s;
+        -moz-animation:move 5s;
+        -ms-animation:move 5s;
+        -o-animation:move 10s;
+        animation:move 10s;
+        /*animation-iteration-count*/
+        -webkit-animation-iteration-count:infinite;
+        -moz-animation-iteration-count:infinite;
+        -ms-animation-iteration-count:infinite;
+        -o-animation-iteration-count:infinite;
+        animation-iteration-count:infinite;
+        /*animation-delay*/
+        -webkit-animation-delay:1s;
+        -moz-animation-delay:1s;
+        -ms-animation-delay:1s;
+        -o-animation-delay:1s;
+        animation-delay:1s;
+        }
+@keyframes move{
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+
+@-webkit-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@-moz-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@-o-keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+@keyframes move {
+    0%  { top: 0px; }
+    20% { top: -50px; }
+    40% { top: -100px; }
+    60% { top: -150px; }
+    80% { top: -200px; }
+}
+/*spinning text end*/
         @media (max-width: 600px) {
             .homepage-card {
                 max-width: 98vw;
@@ -83,15 +159,31 @@
 <body>
     <div id="fade-overlay"></div>
     <div class="homepage-card">
+        <div class="Iam">
         <div class="homepage-title">Clark Galloway</div>
-        <div class="homepage-subtitle">Web Developer & Dental Nurse</div>
+    
+        <b>
+            <div class="innerIam">
+                Web Development<br/>
+                Dental Nursing<br/>
+                Fitness & Wellbeing<br/>
+                Lifelong Learning<br/>
+                Problem Solving<br/>
+            </div>
+        </b>
+        </div>
         <div class="homepage-desc">
             Welcome to my personal site.<br>
             Explore my <b>skills</b>, <b>projects</b>, and <b>progress</b>.<br>
+            <br>
             <span style="color:#c2d001;">Ready to level up?</span>
         </div>
         <a href="portfolio.html" class="homepage-button">View My Projects</a>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
     <footer id="site-footer">
         <div class="footer-links">
             <a href="Home.html">Home</a>
