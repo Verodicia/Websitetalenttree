@@ -67,8 +67,9 @@ body {
 /* The background image is set to cover the entire container */
 #skill-tree-container {
     position: relative;
-    width: 90vw;      /* or 100vw for full width */
-    max-width: 1200x; /* optional max width */
+    width: 100vw;      /* or 100vw for full width */
+    max-width: 700px;/* optional max width */
+    min-width: 350px; /* minimum width for smaller screens */
     aspect-ratio: 1/1; /* keeps it square */
     height: auto;
     margin: 0 auto;
@@ -114,8 +115,8 @@ body {
     height: 8vw;        /* Responsive height */
     min-width: 30px;
     min-height: 30px;
-    max-width: 120px;
-    max-height: 120px;
+    max-width: 60px;
+    max-height: 60px;
     background-color: #ffffff;
     border: 2px solid #fff700;
     border-radius: 50%;
@@ -200,7 +201,7 @@ body {
 
 
 /* Main content grows to fill space, footer stays at bottom */
-.contact-card, .about-card, .portfolio-card, .homepage-card {
+.contact-card, .about-card, .portfolio-card, .homepage-card, .skilltree-container {
     flex: 1 0 auto;
  }
 /* Footer styles */
