@@ -42,6 +42,8 @@ html, body {
 #skill-tree-header {
     text-align: center;
     margin-top: 20px;
+    color: #fff700;
+    font-shadow: 4px 4px 4px rgb(0, 0, 0);
     font-family: 'Courier New', Courier, monospace;
 }
 
@@ -65,7 +67,7 @@ body {
     aspect-ratio: 1/1; /* keeps it square */
     height: auto;
     margin: 0 auto;
-    border: #333 solid 1px;
+    border: #333 solid 2px;
     background-image: url('images/map.png');
     background-size: cover;
     background-position: center;
