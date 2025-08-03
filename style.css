@@ -1,3 +1,22 @@
+
+html, body {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(135deg, #1b1b1b 0%, #4f4f4f 100%);
+    color: #eee;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    min-height: 100vh;
+    background-color: #000000;
+}
+
 /* --- SPLASH SCREEN CSS --- */
 #splash-screen {
     position: fixed; /* Fixes it to the viewport, ignoring scrolling */
@@ -35,10 +54,6 @@
 }
 /* --- END SPLASH SCREEN CSS --- */
 
-html, body {
-    height: 100%;
-    min-height: 100vh;
-}
 #skill-tree-header {
     text-align: center;
     margin-top: 20px;
@@ -46,17 +61,6 @@ html, body {
     text-shadow: 4px 4px 4px #000;
     font-family: 'Courier New', Courier, monospace;
 }
-
-body {
-    background: linear-gradient(135deg, #222 0%, #444 100%);
-    color: #eee;
-    font-family: 'Courier New', Courier, monospace;
-    margin: 0;
-    min-height: 100vh;
-    background-color: #000000;
-}
-
-
 /* Skill tree container */
 /* This container holds the skill tree and its nodes */
 /* It is responsive and maintains a square aspect ratio */
@@ -193,16 +197,22 @@ body {
 */
 /* --- END SKILL TREE CSS --- */
 
+
+
+/* Main content grows to fill space, footer stays at bottom */
+.contact-card, .about-card, .portfolio-card, .homepage-card {
+    flex: 1 0 auto;
+ }
 /* Footer styles */
 /* This section styles the footer of the page */
 #site-footer {
+    flex-shrink: 0;
     width: 100vw;
     background: linear-gradient(90deg, #222 0%, #444 100%);
     color: #eee;
     text-align: center;
     padding: 28px 0 16px 0;
     margin-top: 40px;
-    font-size: 1em;
     border-top: 2px solid #c2d001;
     box-shadow: 0 -2px 12px #222;
     position: relative; 
