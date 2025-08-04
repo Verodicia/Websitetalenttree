@@ -11,6 +11,7 @@ body {
     font-family: 'Courier-new', Courier;
     min-height: 100vh;
     color: #ffffff;
+    background-color: #000000; /* for surroundings to go black in iphone */
 }
 
 /* --- SPLASH SCREEN CSS --- */
