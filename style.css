@@ -11,7 +11,6 @@ body {
     flex-direction: column;
     background: linear-gradient(135deg, #1b1b1b 0%, #4f4f4f 100%);
     background-attachment: fixed;
-    color: #eee;
     font-family: 'Courier New', Courier, monospace;
     margin: 0;
     min-height: 100vh;
@@ -54,140 +53,6 @@ body {
     visibility: hidden;
 }
 /* --- END SPLASH SCREEN CSS --- */
-
-#skill-tree-header {
-    text-align: center;
-    margin-top: 20px;
-    color: #fff700;
-    text-shadow: 4px 4px 4px #000;
-    font-family: 'Courier New', Courier, monospace;
-}
-/* Skill tree container */
-/* This container holds the skill tree and its nodes */
-/* It is responsive and maintains a square aspect ratio */
-/* The background image is set to cover the entire container */
-#skill-tree-container {
-    position: relative;
-    width: 100vw;      /* or 100vw for full width */
-    max-width: 700px;/* optional max width */
-    min-width: 350px; /* minimum width for smaller screens */
-    aspect-ratio: 1/1; /* keeps it square */
-    margin: 0 auto;
-    border: #333 solid 2px;
-    background-image: url('images/map.png');
-    background-size: cover;
-    background-position: center;
-    background-color: #000000;
-    border: #fff700 solid 2px;
-}
-.node-counter {
-    position: absolute;
-    top: 8%;
-    right: 8%;
-    width: 32%;
-    height: 32%;
-    background: #007bff;
-    color: #00ff2a;
-    border-radius: 50%;
-    font-size: 1.1em; /* Scales with node size */
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    font-family: 'Courier New', Courier, monospace; /* Use the Xanh Mono font */
-    justify-content: center;
-    z-index: 10;
-    box-shadow: 0 0 4px #333;
-    pointer-events: none;
-    text-align: center;
-    line-height: 1;
-    transition: font-size 0.2s, width 0.2s, height 0.2s;
-}
-.skill-node {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 8vw;         /* Responsive width */
-    height: 8vw;        /* Responsive height */
-    min-width: 30px;
-    min-height: 30px;
-    max-width: 60px;
-    max-height: 60px;
-    background-color: #ffffff;
-    border: 2px solid #fff700;
-    border-radius: 50%;
-    box-shadow: 2px 2px 5px rgb(255, 200, 0);
-}
-.skill-node img {
-    width: 70%;
-    height: auto;
-    max-width: 90%;
-    max-height: 90%;
-    margin-bottom: 0;
-    display: block;
-}
-/* Hide the node title text for a picture-only look */
-.node-title {
-    /* font-size: 0.9em;
-    text-align: center;
-    color: #ff0000;
-    margin: 0;
-    word-break: break-word;
-    line-height: 1.1; */
-    display: none;
-}
-#connections-svg {
-    position: static;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none; /* Allow clicks to pass through to nodes */
-    z-index: -01; /* Place behind nodes */
-}
-/* Style for the SVG lines */
-.connection-arrow {
-    stroke: #ff000000;
-    stroke-width: 6;
-    stroke-opacity: 20%;
-    marker-end: url(#arrowhead); /* Add an arrowhead marker */
-}
-.skill-node.pop {
-    animation: popNode 0.3s;
-}
-/* Highlight for clicked node */
-.skill-node.highlighted {
-    border-color: #007bff; /* Bright blue border */
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.6); /* Glowing effect */
-    background-color: #e0f0ff; /* Slightly lighter background */
-    transform: scale(1.05); /* Slightly enlarge on highlight */
-    transition: all 0.2s ease-out; /* Smooth transition for highlight */
-}
-@keyframes popNode {
-    0%   { transform: scale(1); }
-    50%  { transform: scale(1.2); }
-    100% { transform: scale(1); }
-}
-/* Highlight for connections */
-.connection-arrow.highlighted {
-    stroke: #007bff; /* Bright blue stroke */
-    stroke-width: 5; /* Thicker line */
-    /* Optional: Add a subtle animation or dash array to make it stand out */
-    /* stroke-dasharray: 5 5; */
-    /* animation: dash 1s linear infinite; */
-    transition: stroke 0.2s ease-out, stroke-width 0.2s ease-out;
-    stroke-opacity: 1; /* Fully opaque when highlighted */
-}
-
-/* If you want to animate the dash, add this: */
-/*
-@keyframes dash {
-    from { stroke-dashoffset: 0; }
-    to { stroke-dashoffset: 100; }
-}
-*/
-/* --- END SKILL TREE CSS --- */
 
 
 
@@ -262,8 +127,7 @@ body {
 
 
 @media (max-width: 600px) {
-    .contact-card,
-    .about-card {
+    .contact-card,.about-card,.homepage-card {
         max-width: 98vw;
         padding: 10vw 3vw;
         margin: 24px auto 0 auto;
