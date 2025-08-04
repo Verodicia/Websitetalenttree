@@ -10,6 +10,7 @@ body {
     background-attachment: fixed;
     font-family: 'Courier-new', Courier;
     min-height: 100vh;
+    color: #ffffff;
 }
 
 /* --- SPLASH SCREEN CSS --- */
